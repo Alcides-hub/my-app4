@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import {Text, View, Image, Button } from 'react-native';
 import React, {useState} from 'react';
-import {Styles} from './styles';
+import {styles} from './styles';
 
 export default function App() {
   const [dice, setDice] = useState(1);
@@ -17,7 +17,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Image source={images.pics[dice]}/>
+      <View style={styles.container2}>
+      <Image source={images.pics[dice]} style={styles.image}/>
+      </View>
       <Text style={styles.word}>Please press me</Text>
       <Button title='Hey! Throw the dice!' style={styles.button} onPress={()=>setDice(Math.floor(Math.random()*6))}/>
     </View>
